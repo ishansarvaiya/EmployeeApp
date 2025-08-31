@@ -1,0 +1,31 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Title List";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-info text-white">
+        <h5 class="mb-0"><i class="bi bi-list"></i> Titles</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-striped align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Min Salary</th>
+                    <th>Max Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model)
+                {
+                    <tr>
+                        <td>@t.Title</td>
+                        <td><span class="badge bg-success">@t.MinSalary.ToString("C")</span></td>
+                        <td><span class="badge bg-danger">@t.MaxSalary.ToString("C")</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

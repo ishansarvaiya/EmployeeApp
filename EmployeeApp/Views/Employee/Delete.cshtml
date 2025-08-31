@@ -1,0 +1,20 @@
+﻿@model EmployeeApp.Models.Employee
+@{
+    ViewData["Title"] = "Delete Employee";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h5 class="mb-0"><i class="bi bi-trash"></i> Delete Employee</h5>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            Are you sure you want to delete <strong>@Model.Name</strong>?
+        </div>
+        <form asp-action="Delete" method="post" class="text-end">
+            <input type="hidden" asp-for="EmployeeId" />
+            <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i> Delete</button>
+            <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-x-circle"></i> Cancel</a>
+        </form>
+    </div>
+</div>

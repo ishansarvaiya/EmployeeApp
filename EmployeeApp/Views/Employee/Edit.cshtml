@@ -1,0 +1,61 @@
+﻿@model EmployeeApp.Models.Employee
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Edit Employee</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post" class="row g-3">
+            <input type="hidden" asp-for="EmployeeId" />
+
+            <div class="col-md-6 form-floating">
+                <input asp-for="Name" class="form-control" placeholder="Name" />
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input asp-for="SSN" class="form-control" placeholder="SSN" />
+                <label asp-for="SSN"></label>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input asp-for="DOB" type="date" class="form-control" placeholder="DOB" />
+                <label asp-for="DOB"></label>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input asp-for="JoinDate" type="date" class="form-control" placeholder="Join Date" />
+                <label asp-for="JoinDate"></label>
+            </div>
+            <div class="col-12 form-floating">
+                <input asp-for="Address" class="form-control" placeholder="Address" />
+                <label asp-for="Address"></label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input asp-for="City" class="form-control" placeholder="City" />
+                <label asp-for="City"></label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input asp-for="State" class="form-control" placeholder="State" />
+                <label asp-for="State"></label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input asp-for="Zip" class="form-control" placeholder="Zip" />
+                <label asp-for="Zip"></label>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input asp-for="Phone" class="form-control" placeholder="Phone" />
+                <label asp-for="Phone"></label>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input asp-for="ExitDate" type="date" class="form-control" placeholder="Exit Date" />
+                <label asp-for="ExitDate"></label>
+            </div>
+
+            <div class="col-12 text-end">
+                <button type="submit" class="btn btn-warning me-2"><i class="bi bi-save"></i> Update</button>
+                <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-x-circle"></i> Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
